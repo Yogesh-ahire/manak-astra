@@ -1,0 +1,19 @@
+# Security
+.env
+.env.local
+.env.*
+
+# Python / Backend
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Node / Next.js / Frontend
+node_modules/
+.next/
+out/
+build/
+.DS_Store

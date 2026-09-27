@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+supabase
+python-dotenv
+pydantic
+pydantic-settings
+sentence-transformers
+torch
+numpy
+pandas
+groq
+openpyxl
