@@ -23,24 +23,25 @@ export function Navbar({ uiLang, setUiLang, busy }: NavbarProps) {
             fontFamily: 'system-ui, -apple-system, sans-serif'
         }}>
             
-            <div className="brand-lockup" style={{ display: 'flex', alignItems: 'center' }}>
+            {/* BRAND LOCKUP - Adjusted gaps and sizing */}
+            <div className="brand-lockup" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <img 
                     src="/logo.png" 
                     alt="Manak Astra Logo" 
                     style={{ 
-                        height: '42px',
+                        height: '46px', /* Increased height slightly for better visibility */
                         width: 'auto', 
                         objectFit: 'contain',
                         flexShrink: 0
                     }} 
                 />
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '4px' }}>
                     <strong style={{ 
-                        fontSize: '16px', 
-                        fontWeight: '700', 
+                        fontSize: '18px', /* Slightly larger font */
+                        fontWeight: '800', /* Made it bolder */
                         color: '#0f172a', 
-                        lineHeight: '1.2',
+                        lineHeight: '1',
                         letterSpacing: '-0.01em'
                     }}>
                         MANAK ASTRA
@@ -48,7 +49,7 @@ export function Navbar({ uiLang, setUiLang, busy }: NavbarProps) {
                     <span style={{ 
                         fontSize: '12px', 
                         color: '#64748b',
-                        fontWeight: '400',
+                        fontWeight: '500',
                         lineHeight: '1',
                         whiteSpace: 'nowrap'
                     }}>
@@ -57,6 +58,7 @@ export function Navbar({ uiLang, setUiLang, busy }: NavbarProps) {
                 </div>
             </div>
 
+            {/* LANGUAGE SELECTOR */}
             <div style={{ position: 'relative' }}>
                 <select
                     value={uiLang}
