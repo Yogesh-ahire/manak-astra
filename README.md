@@ -75,22 +75,22 @@ Utilizes the **BHASHINI** translation layer to support procurement requirements 
 
 ### Dashboard & Multilingual Standard Search and Audit 
 <p align="center">
-  <img src="docs/images/search_dashboard.png" width="850" alt="Manak Astra Dashboard"/>
+  <img src="docs/images/search_dashboard.png" width="650" alt="Manak Astra Dashboard"/>
 </p>
 
 ### Tender Audit & Human-in-the-Loop Verification
 <p align="center">
-  <img src="docs/images/hitl_verification.png" width="850" alt="Human Verification Screen"/>
+  <img src="docs/images/hitl_verification.png" width="650" alt="Human Verification Screen"/>
 </p>
 
 ### Coverage Gap Analysis & Red Alerts
 <p align="center">
-  <img src="docs/images/coverage_gaps.png" width="850" alt="Coverage Gap Results"/>
+  <img src="docs/images/coverage_gaps.png" width="650" alt="Coverage Gap Results"/>
 </p>
 
 ### GEM Ready Tender Clause
 <p align="center">
-  <img src="docs/images/tender_clause.png" width="850" alt="GEM Ready Tender Clause"/>
+  <img src="docs/images/tender_clause.png" width="650" alt="GEM Ready Tender Clause"/>
 </p>
 
 ---
@@ -100,7 +100,7 @@ Utilizes the **BHASHINI** translation layer to support procurement requirements 
 Standard AI chatbots fail in procurement because they hallucinate facts. Manak Astra succeeds through strict architectural boundaries: **LLMs only understand language, while PostgreSQL strictly verifies facts.**
 
 <p align="center">
-  <img src="docs/images/system_flow.png" width="850" alt="System Flow"/>
+  <img src="docs/images/system_flow.png" width="650" alt="System Flow"/>
 </p>
 
 ## 💻 Tech Stack
@@ -142,7 +142,7 @@ Standard AI chatbots fail in procurement because they hallucinate facts. Manak A
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/manak-astra.git](https://github.com/YOUR_USERNAME/manak-astra.git)
+git clone [https://github.com/Yogesh-ahireE/manak-astra.git](https://github.com/Yogesh-ahire/manak-astra.git)
 cd manak-astra
 ```
 
