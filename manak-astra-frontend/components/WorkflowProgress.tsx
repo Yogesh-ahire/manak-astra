@@ -1,3 +1,5 @@
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\components\WorkflowProgress.tsx
+
 "use client";
 
 import { Check, Languages, FileText, Sparkles, Loader2 } from "lucide-react";

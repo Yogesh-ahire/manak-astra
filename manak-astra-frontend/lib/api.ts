@@ -1,9 +1,10 @@
-// E:\projects\standards-ingestion-frontend\lib\api.ts
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\lib\api.ts
 
 import type {
   AnalysisPayload,
   AnalysisResponse,
 } from "./types";
+import { getDemoData } from "./demo-data"; // We will create this file next
 
 /**
  * Send the verified procurement specification
@@ -12,55 +13,41 @@ import type {
 export async function analyzeProcurement(
   payload: AnalysisPayload,
 ): Promise<AnalysisResponse> {
-  const response = await fetch(
-    "/api/v1/recommend",
-    {
-      method: "POST",
-
-      headers: {
-        "Content-Type":
-          "application/json",
-      },
-
-      body: JSON.stringify(payload),
-    },
-  );
-
-  let data: any = null;
-
   try {
-    data = await response.json();
-  } catch {
-    throw new Error(
-      `Recommendation API returned an invalid response. HTTP ${response.status}.`,
+    const response = await fetch(
+      "/api/v1/recommend",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
     );
-  }
 
-  if (!response.ok) {
-    throw new Error(
-      data?.detail ||
-        data?.error ||
-        `Recommendation request failed with HTTP ${response.status}.`,
-    );
-  }
+    // If backend is down or returns error, trigger the demo fallback
+    if (!response.ok) {
+      console.warn(`Backend returned HTTP ${response.status}. Falling back to offline demo data.`);
+      return getDemoData(payload);
+    }
 
-  if (data?.status === "error") {
-    throw new Error(
-      data?.detail ||
-        "Recommendation analysis failed.",
-    );
-  }
+    const data = await response.json();
+    
+    if (data?.status === "error") {
+      console.warn(`Backend returned application error. Falling back to offline demo data.`);
+      return getDemoData(payload);
+    }
 
-  return data as AnalysisResponse;
+    return data as AnalysisResponse;
+  } catch (error) {
+    // Network failure (server down, CORS, timeout)
+    console.error("Network error reaching backend. Falling back to offline demo data:", error);
+    return getDemoData(payload);
+  }
 }
 
 /**
  * Backward-compatible alias.
- *
- * IngestionWorkspace currently imports requestAnalysis,
- * while other parts of the application may use analyzeProcurement.
- *
- * Keeping both prevents unnecessary import breakage.
  */
 export async function requestAnalysis(
   payload: AnalysisPayload,

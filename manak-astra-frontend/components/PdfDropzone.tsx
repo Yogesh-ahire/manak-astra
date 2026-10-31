@@ -1,3 +1,5 @@
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\components\PdfDropzone.tsx
+
 "use client";
 
 import { useCallback, useRef, useState } from "react";

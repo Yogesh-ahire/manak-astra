@@ -1,3 +1,5 @@
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\components\AnalysisResult.tsx
+
 "use client";
 
 import { useState } from "react";

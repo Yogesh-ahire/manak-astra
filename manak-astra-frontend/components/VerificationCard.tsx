@@ -1,3 +1,5 @@
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\components\VerificationCard.tsx
+
 "use client";
 
 import { AlertTriangle, CheckCircle2, Info, Trash2 } from "lucide-react";

@@ -1,3 +1,5 @@
+// E:\projects\Completed Projects\ManakAstra\manak-astra-frontend\components\Navbar.tsx
+
 "use client";
 
 import { LanguageCode } from "@/lib/i18n";
